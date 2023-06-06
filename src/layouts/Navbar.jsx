@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    <header className=" shadow-md">
-      <div className="navbar bg-C-white px-10  py-3 flex-wrap">
+    <header className=" shadow-md relative">
+      <div className="navbar bg-C-white px-10 sticky py-3 flex-wrap">
         <div className="flex-1">
           {/* <a className="btn btn-ghost normal-case text-xl"></a> */}
           <img
