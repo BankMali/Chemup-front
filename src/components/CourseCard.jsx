@@ -1,5 +1,6 @@
 import React from "react";
 import ButtonYellow from "./ButtonYellow";
+import { BiTimeFive } from "react-icons/bi";
 
 export default function CourseCard() {
   return (
@@ -26,10 +27,10 @@ export default function CourseCard() {
           </ul>
         </div>
         <div className=" bg-C-gray3 h-[35px] rounded-b-3xl flex justify-between items-center px-5 text-sm">
-          <p>
-            <span>icon</span>
+          <div className="flex items-center gap-1 text-C-white">
+            <BiTimeFive />
             44 ชั่วโมง
-          </p>
+          </div>
           <p className=" text-C-yellow3 text-base">ราคา 2,990.-</p>
         </div>
       </div>

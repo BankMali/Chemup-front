@@ -1,6 +1,6 @@
 export default function TestStudy() {
   return (
-    <div className=" h-fit bg-gradient-to-b from-C-blue4 to-C-blue1 px-10 py-10">
+    <div className=" h-fit bg-gradient-to-b from-C-blue4 to-C-blue1 px-10 py-20">
       <div className="flex justify-between items-baseline">
         <h1 className="text-xl text-C-white font-medium">ทดลองเรียน</h1>
         <a href="" className=" hover:text-C-yellow3">
@@ -19,9 +19,8 @@ export default function TestStudy() {
           className=" rounded-3xl w-[45%] h-[300px] min-w-[300px]"></iframe>
         <iframe
           src="https://www.youtube.com/embed/aPT26Dd3OzE"
-          className="rounded-3xl w-[45%] h-[300px] min-w-[300px]"></iframe>
+          className=" rounded-3xl w-[45%] h-[300px] min-w-[300px]"></iframe>
       </div>
-      test video
     </div>
   );
 }
