@@ -1,8 +1,8 @@
-export default function TestStudy() {
+export default function DemoTeach() {
   return (
     <div className=" h-fit bg-gradient-to-b from-C-blue4 to-C-blue1 px-10 py-20">
       <div className="flex justify-between items-baseline">
-        <h1 className="text-xl text-C-white font-medium">ทดลองเรียน</h1>
+        <h1 className="text-xl text-C-white font-medium">ตัวอย่างการสอน</h1>
         <a href="" className=" hover:text-C-yellow3">
           ดูทั้งหมด
         </a>

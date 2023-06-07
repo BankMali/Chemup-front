@@ -26,7 +26,7 @@ export default function Navbar() {
           </li>
           <li>
             <a className=" hover:text-C-yellow3 font-semibold rounded-full hover:scale-110 ">
-              ทดลองเรียน
+              ตัวอย่างการสอน
             </a>
           </li>
         </ul>

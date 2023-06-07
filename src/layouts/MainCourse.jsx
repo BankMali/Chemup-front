@@ -1,6 +1,5 @@
 import React from "react";
 import CourseCard from "../components/CourseCard";
-import ButtonYellow from "../components/ButtonYellow";
 
 export default function MainCourse() {
   return (

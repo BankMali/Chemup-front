@@ -2,16 +2,16 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="footer footer-center p-10 bg-C-gray3 text-base-content rounded">
+    <footer className="footer footer-center p-8 bg-C-gray3 text-base-content">
       <div className="grid grid-flow-col gap-4">
         <a className="link link-hover">หน้าแรก</a>
         <a className="link link-hover">คอร์สเรียน</a>
-        <a className="link link-hover">ทดลองเรียน</a>
+        <a className="link link-hover">ตัวอย่างการสอน</a>
         <a className="link link-hover">คอร์สเรียนหลัก</a>
         <a className="link link-hover">คอร์สเรียนบทย่อย</a>
       </div>
       <div>
-        <div className="grid grid-flow-col gap-4">
+        <div className="grid grid-flow-col gap-4 m-[-2rem]">
           {/* <a>
             <svg
               xmlns="http://www.w3.org/2000/svg"

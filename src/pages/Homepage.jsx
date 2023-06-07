@@ -6,21 +6,20 @@ import Navbar from "../layouts/Navbar";
 import ReviewTeacher from "../layouts/ReviewTeacher";
 import SubCourse from "../layouts/SubCourse";
 import Subbar from "../layouts/Subbar";
-import TestStudy from "../layouts/TestStudy";
+import DemoTeach from "../layouts/DemoTeach";
 
 export default function Homepage() {
   return (
     <div>
-      <div className=" h-screen bg-C-white">
+      <div className=" h-fit bg-C-white">
         <Navbar />
         <HeadContent />
         <Subbar />
         <MainCourse />
         <SubCourse />
-        <TestStudy />
+        <DemoTeach />
         <AboutTeacher />
         <ReviewTeacher />
-
         <Footer />
       </div>
     </div>
