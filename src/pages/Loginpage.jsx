@@ -13,10 +13,10 @@ export default function Loginpage() {
         <p>เข้าสู่ระบบ</p>
       </div> */}
       <div className="w-full h-full bg-C-white flex flex-col justify-start items-center py-10">
-        <div className=" bg-white p-10 rounded-xl shadow-md w-fit flex flex-col justify-center items-center gap-4">
-          <p className=" text-C-gray3">เข้าสู่ระบบ</p>
-          <Inputbar>Email</Inputbar>
-          <Inputbar>Password</Inputbar>
+        <div className=" bg-white p-10 rounded-xl shadow-md w-[450px] flex flex-col justify-center items-center gap-4">
+          <p className=" text-C-gray3 text-lg font-bold pb-4">เข้าสู่ระบบ</p>
+          <Inputbar title="Email"></Inputbar>
+          <Inputbar title="Password"></Inputbar>
           <div className=" flex gap-5 text-center justify-center">
             <ButtonBlue>เข้าสู่ระบบ</ButtonBlue>
             <ButtonGhost>ทดลองเรียน</ButtonGhost>
