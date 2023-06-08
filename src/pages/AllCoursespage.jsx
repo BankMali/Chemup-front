@@ -2,14 +2,14 @@ import CourseCard from "../components/CourseCard";
 import SubCourseCard from "../components/SubCourseCard";
 import Footer from "../layouts/Footer";
 import Navbar from "../layouts/Navbar";
+import SubHeader from "../layouts/SubHeader";
 
 export default function AllCoursespage() {
   return (
     <div>
       <Navbar />
-      <div className=" bg-C-blue1 text-C-white text-xl h-[80px] flex justify-center items-center">
-        <p>คอร์สเรียนหลัก</p>
-      </div>
+      <SubHeader>คอร์สเรียนทั้งหมด</SubHeader>
+
       <div className="px-10 py-8 flex flex-wrap gap-10 bg-C-white">
         <CourseCard />
         <CourseCard />
@@ -20,9 +20,8 @@ export default function AllCoursespage() {
         <CourseCard />
         <CourseCard />
       </div>
-      <div className=" bg-C-blue1 text-C-white text-xl h-[80px] flex justify-center items-center">
-        <p>คอร์สเรียนบทย่อย</p>
-      </div>
+      {/* <SubHeader>คอร์สเรียนบทย่อย</SubHeader> */}
+
       <div className="px-10 py-8 flex flex-wrap gap-10 bg-C-white">
         <SubCourseCard />
         <SubCourseCard />

@@ -1,13 +1,13 @@
 import Footer from "../layouts/Footer";
 import Navbar from "../layouts/Navbar";
+import SubHeader from "../layouts/SubHeader";
 
 export default function DemoTeachpage() {
   return (
     <div>
       <Navbar />
-      <div className=" bg-C-blue1 text-C-white text-xl h-[80px] flex justify-center items-center">
-        <p>ตัวอย่างการสอน</p>
-      </div>
+      <SubHeader>ตัวอย่างการสอน</SubHeader>
+
       <div className="flex justify-center flex-wrap gap-8 py-10">
         <iframe
           src="https://www.youtube.com/embed/0okuAwqTHs0"

@@ -5,8 +5,8 @@ export default function AboutTeacher() {
     <div className=" h-fit w-auto bg-C-white p-10 py-20 flex justify-around text-C-gray3 gap-5">
       <div className=" flex-1">
         <img
-          src="/src/assets/teacherpic.jpg"
-          alt="pig"
+          src="/src/assets/teacherpic.jpeg"
+          alt="pic"
           className="h-fit w-fit rounded-3xl overflow-hidden"
         />
       </div>

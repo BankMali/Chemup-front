@@ -3,7 +3,7 @@ export default function DemoTeach() {
     <div className=" h-fit bg-gradient-to-b from-C-blue4 to-C-blue1 px-10 py-20">
       <div className="flex justify-between items-baseline">
         <h1 className="text-xl text-C-white font-medium">ตัวอย่างการสอน</h1>
-        <a href="" className=" hover:text-C-yellow3">
+        <a href="/demoteach" className=" hover:text-C-yellow3">
           ดูทั้งหมด
         </a>
       </div>

@@ -6,7 +6,7 @@ export default function HeadContent() {
     <div className=" h-[400px] bg-slate-500 ">
       <div className=" bg-[url('/src/assets/cardbg.jpg')] h-full w-full bg-fixed flex">
         <div className="flex-1 h-full flex justify-end flex-col min-w-[200px] overflow-visible">
-          <img src="src/assets/women.png" alt="" className="h-fit" />
+          <img src="src/assets/women.png" alt="" className="h-fit w-fit" />
         </div>
         <div className="flex flex-col flex-1 bg-gradient-to-l  from-white justify-center items-center">
           <div className=" w-fit align-middle text-center">
@@ -20,8 +20,12 @@ export default function HeadContent() {
             </div>
 
             <div className=" flex gap-5 flex-wrap text-center justify-center">
-              <ButtonBlue>เข้าสู่ระบบ</ButtonBlue>
-              <ButtonYellow>สมัครสมาชิก</ButtonYellow>
+              <a href="/login">
+                <ButtonBlue>เข้าสู่ระบบ</ButtonBlue>
+              </a>
+              <a href="/register">
+                <ButtonYellow>สมัครสมาชิก</ButtonYellow>
+              </a>
             </div>
           </div>
         </div>

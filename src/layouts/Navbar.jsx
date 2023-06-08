@@ -6,28 +6,34 @@ export default function Navbar() {
     <div className="sticky top-0 z-40">
       <header className="sticky top-0 shadow-md">
         <div className="navbar bg-C-white px-10 py-3 flex-wrap">
-          <div className="flex-1">
+          <a href="/" className="flex-1">
             {/* <a className="btn btn-ghost normal-case text-xl"></a> */}
             <img
               src="/src/assets/ChemUplogo.png"
               alt="pig"
               className=" h-14 min-w-fit"
             />
-          </div>
+          </a>
 
           <ul className="menu menu-horizontal text-C-blue2">
             <li>
-              <a className="menu hover:text-C-yellow3 font-semibold rounded-full hover:scale-110 h-full ">
+              <a
+                href="/"
+                className="menu hover:text-C-yellow3 font-semibold rounded-full hover:scale-110 h-full ">
                 หน้าแรก
               </a>
             </li>
             <li>
-              <a className=" hover:text-C-yellow3 font-semibold rounded-full hover:scale-110 ">
+              <a
+                href="/allcourse"
+                className=" hover:text-C-yellow3 font-semibold rounded-full hover:scale-110 ">
                 คอร์สเรียน
               </a>
             </li>
             <li>
-              <a className=" hover:text-C-yellow3 font-semibold rounded-full hover:scale-110 ">
+              <a
+                href="/demoteach"
+                className=" hover:text-C-yellow3 font-semibold rounded-full hover:scale-110 ">
                 ตัวอย่างการสอน
               </a>
             </li>
@@ -75,15 +81,18 @@ export default function Navbar() {
               </div>
             </div>
 
-            <div className="flex items-center">
+            <a
+              href="/login"
+              className="flex items-center active:scale-100 duration-150 hover:scale-105">
               <div className="dropdown dropdown-end ">
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <label
+                  tabIndex={0}
+                  className="rounded-full avatar cursor-pointer">
                   <div className="w-10 rounded-full border-2">
                     <img src="/src/assets/blank.png" className=" " />
-                    <p>ff</p>
                   </div>
                 </label>
-                <ul
+                {/* <ul
                   tabIndex={0}
                   className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-white rounded-box w-52">
                   <li>
@@ -98,10 +107,12 @@ export default function Navbar() {
                   <li>
                     <a>Logout</a>
                   </li>
-                </ul>
+                </ul> */}
               </div>
-              <button className=" menu font-semibold">เข้าสู่ระบบ</button>
-            </div>
+              <a href="/login" className=" menu font-semibold">
+                เข้าสู่ระบบ
+              </a>
+            </a>
           </div>
         </div>
       </header>

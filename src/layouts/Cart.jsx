@@ -1,5 +1,3 @@
-import ButtonBlue from "../components/ButtonBlue";
-import ButtonGhost from "../components/ButtonGhost";
 import ButtonYellow from "../components/ButtonYellow";
 import OrderItem from "./OrderItem";
 
@@ -19,7 +17,9 @@ export default function Cart() {
           <p>รวม</p>
           <p className=" text-C-blue1 text-lg">฿ 10,000</p>
         </div>
-        <ButtonYellow>ชำระเงิน</ButtonYellow>
+        <a href="/register">
+          <ButtonYellow>ชำระเงิน</ButtonYellow>
+        </a>
         <div className=" flex gap-2 justify-end w-full"></div>
       </div>
     </div>

@@ -6,6 +6,13 @@ import SubCoursepage from "../pages/SubCoursepage";
 import DemoTeachpage from "../pages/DemoTeachpage";
 import Loginpage from "../pages/Loginpage";
 import Registerpage from "../pages/Registerpage";
+import Userpage from "../pages/Userpage";
+import M3page from "../pages/CourseDetailpage";
+import CourseDetailpage from "../pages/CourseDetailpage";
+import Adminpage from "../pages/Adminpage";
+import SubCourseDetailpage from "../pages/SubCourseDetailpage";
+import ChangePasswordpage from "../pages/ChangePasswordpage";
+import ForgetPasswordpage from "../pages/ForgetPasswordpage";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +36,7 @@ const router = createBrowserRouter([
     // children: [],
   },
   {
-    path: "/teststudy",
+    path: "/demoteach",
     element: <DemoTeachpage />,
     // children: [],
   },
@@ -39,8 +46,38 @@ const router = createBrowserRouter([
     // children: [],
   },
   {
+    path: "/changepassword",
+    element: <ChangePasswordpage />,
+    // children: [],
+  },
+  {
     path: "/register",
     element: <Registerpage />,
+    // children: [],
+  },
+  {
+    path: "/forgetpassword",
+    element: <ForgetPasswordpage />,
+    // children: [],
+  },
+  {
+    path: "/userpage",
+    element: <Userpage />,
+    // children: [],
+  },
+  {
+    path: "/coursedetail",
+    element: <CourseDetailpage />,
+    // children: [],
+  },
+  {
+    path: "/subcoursedetail",
+    element: <SubCourseDetailpage />,
+    // children: [],
+  },
+  {
+    path: "/admin",
+    element: <Adminpage />,
     // children: [],
   },
 ]);
