@@ -49,7 +49,7 @@ export default function Adminpage() {
 
   const hdlAddclick = () => {
     console.log("dwdwdwdwwwdwdwdwdwdwdw");
-    setLesson([...lesson, { namr: "" }]);
+    setLesson([...lesson, { name: "" }]);
   };
 
   const hdlRemove = (index) => {
