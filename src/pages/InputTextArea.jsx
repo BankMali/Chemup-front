@@ -1,8 +1,7 @@
 import createClasses from "../utils/create-classes";
 
-export default function Inputbar({
-  title,
-  type,
+export default function InputTextArea({
+  placeholder,
   onChange,
   value,
   error,
@@ -18,15 +17,13 @@ export default function Inputbar({
   );
 
   return (
-    <div className="w-full h-fit">
-      <input
-        type={type || "text"}
-        placeholder={title}
-        onChange={onChange}
-        value={value}
-        className={className}
-        name={name}
-      />
-    </div>
+    <textarea
+      value={value}
+      error={error}
+      placeholder={placeholder}
+      onChange={onChange}
+      className={className}
+      name={name}
+    />
   );
 }

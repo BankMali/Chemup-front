@@ -1,7 +1,10 @@
 import ButtonBlue from "../components/ButtonBlue";
 import ButtonYellow from "../components/ButtonYellow";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function HeadContent() {
+  const { user } = useAuth();
+
   return (
     <div className=" h-[400px] bg-slate-500 ">
       <div className=" bg-[url('/src/assets/cardbg.jpg')] h-full w-full bg-fixed flex">
@@ -20,12 +23,18 @@ export default function HeadContent() {
             </div>
 
             <div className=" flex gap-5 flex-wrap text-center justify-center">
-              <a href="/login">
-                <ButtonBlue>เข้าสู่ระบบ</ButtonBlue>
-              </a>
-              <a href="/register">
-                <ButtonYellow>สมัครสมาชิก</ButtonYellow>
-              </a>
+              {user ? (
+                <a href="/demoteach">
+                  <ButtonYellow>ทดลองเรียน</ButtonYellow>
+                </a>
+              ) : (
+                //   <a href="/login">
+                //     <ButtonBlue href="/login" >เข้าสู่ระบบ</ButtonBlue>
+                //   </a>
+                <a href="/register">
+                  <ButtonYellow>สมัครสมาชิก</ButtonYellow>
+                </a>
+              )}
             </div>
           </div>
         </div>

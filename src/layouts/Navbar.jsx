@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Cart from "./Cart";
+import { useAuth } from "../contexts/AuthContext";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+  const { user, logout } = useAuth();
+
+  const hdlLogout = () => {
+    logout();
+    navigate("/");
+  };
+
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
+
   return (
     <div className="sticky top-0 z-40">
       <header className="sticky top-0 shadow-md">
@@ -81,14 +95,12 @@ export default function Navbar() {
               </div>
             </div>
 
-            <a
-              href="/login"
-              className="flex items-center active:scale-100 duration-150 hover:scale-105">
-              <div className="dropdown dropdown-end ">
+            <div className="flex items-center a">
+              <div className="dropdown dropdown-end ctive:scale-100 duration-150 hover:scale-105">
                 <label
                   tabIndex={0}
                   className="rounded-full avatar cursor-pointer">
-                  <div className="w-10 rounded-full border-2">
+                  <div href="/login" className="w-10 rounded-full border-2">
                     <img src="/src/assets/blank.png" className=" " />
                   </div>
                 </label>
@@ -109,10 +121,18 @@ export default function Navbar() {
                   </li>
                 </ul> */}
               </div>
-              <a href="/login" className=" menu font-semibold">
-                เข้าสู่ระบบ
-              </a>
-            </a>
+              <div className="ctive:scale-100 duration-150 hover:scale-105">
+                {user ? (
+                  <button onClick={hdlLogout} className=" menu font-semibold">
+                    ออกจากระบบ
+                  </button>
+                ) : (
+                  <a href="/login" className=" menu font-semibold">
+                    เข้าสู่ระบบ
+                  </a>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </header>

@@ -21,6 +21,14 @@ export default function Homepage() {
         <AboutTeacher />
         <ReviewTeacher />
         <Footer />
+        {/* 
+        <div className=" h-28 w-28  ">
+          <div className=" bg-[url('/src/assets/eye.png')] h-fit w-fit flex bg-cover bg-center">
+            <div className="flex-1 h-fit w-fit animate-spin">
+              <img src="src/assets/reacticon.png" alt="" className="scale-50" />
+            </div>
+          </div>
+        </div> */}
       </div>
     </div>
   );

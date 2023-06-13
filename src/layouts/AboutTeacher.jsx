@@ -17,7 +17,7 @@ export default function AboutTeacher() {
         </div>
 
         <div className="collapse collapse-arrow bg-C-white border mt-4">
-          <input type="radio" name="my-accordion-2" checked="checked" />
+          <input type="radio" name="my-accordion-2" />
           <div className="collapse-title text-xl font-medium">
             ประวัติการศึกษา
           </div>

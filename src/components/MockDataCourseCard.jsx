@@ -1,10 +1,6 @@
-import CourseCard from "../components/CourseCard";
-import Inputbar from "../components/Inputbar";
-import Footer from "../layouts/Footer";
-import Navbar from "../layouts/Navbar";
-import SubHeader from "../layouts/SubHeader";
+import CourseCard from "./CourseCard";
 
-export default function MainCoursepage() {
+export default function MockDataCourseCard() {
   const mockData = [
     {
       courseId: 1,
@@ -14,42 +10,48 @@ export default function MainCoursepage() {
       time_max: 44,
       status: false,
       course_img: "src/assets/cardbg.jpg",
-      leasonId: 1,
-      leason: [
+      color: "bg-[ffffff]",
+      lessonId: 1,
+      lesson: [
         {
           name: "บทที่ 1 การจำแนกสาร",
           description: "..",
           subLeasonId: 1,
+          time: 10,
           subLeason: [
             {
               name: "การจำแนกสารรอบตัว",
               description: "...",
               file: "...",
-              video: "...",
+              time: 6,
             },
             {
               name: "test2",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test3",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test4",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test5",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
           ],
         },
@@ -57,36 +59,42 @@ export default function MainCoursepage() {
           name: "บทที่ 2 การจำแนกสาร",
           description: "..",
           subLeasonId: 1,
+          time: 10,
           subLeason: [
             {
               name: "การจำแนกสารรอบตัว",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
             {
               name: "test2",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test3",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test4",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test5",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
           ],
         },
@@ -95,12 +103,14 @@ export default function MainCoursepage() {
           name: "บทที่ 3 การจำแนกสาร",
           description: "..",
           subLeasonId: 2,
+          time: 10,
           subLeason: [
             {
               name: "สารละลาย",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
           ],
         },
@@ -108,36 +118,42 @@ export default function MainCoursepage() {
           name: "บทที่ 2 การจำแนกสาร",
           description: "..",
           subLeasonId: 1,
+          time: 10,
           subLeason: [
             {
               name: "การจำแนกสารรอบตัว",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
             {
               name: "test2",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test3",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test4",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test5",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
           ],
         },
@@ -146,12 +162,14 @@ export default function MainCoursepage() {
           name: "บทที่ 3 การจำแนกสาร",
           description: "..",
           subLeasonId: 2,
+          time: 10,
           subLeason: [
             {
               name: "สารละลาย",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
           ],
         },
@@ -165,42 +183,48 @@ export default function MainCoursepage() {
       time_max: 44,
       status: false,
       course_img: "src/assets/cardbg.jpg",
-      leasonId: 1,
-      leason: [
+      lessonId: 1,
+      lesson: [
         {
           name: "บทที่ 1 การจำแนกสาร",
           description: "..",
           subLeasonId: 1,
+          time: 10,
           subLeason: [
             {
               name: "การจำแนกสารรอบตัว",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
             {
               name: "test2",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test3",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test4",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test5",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
           ],
         },
@@ -208,36 +232,42 @@ export default function MainCoursepage() {
           name: "บทที่ 2 การจำแนกสาร",
           description: "..",
           subLeasonId: 1,
+          time: 10,
           subLeason: [
             {
               name: "การจำแนกสารรอบตัว",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
             {
               name: "test2",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test3",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test4",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test5",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
           ],
         },
@@ -246,12 +276,14 @@ export default function MainCoursepage() {
           name: "บทที่ 3 การจำแนกสาร",
           description: "..",
           subLeasonId: 2,
+          time: 10,
           subLeason: [
             {
               name: "สารละลาย",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
           ],
         },
@@ -259,36 +291,42 @@ export default function MainCoursepage() {
           name: "บทที่ 1 การจำแนกสาร",
           description: "..",
           subLeasonId: 1,
+          time: 10,
           subLeason: [
             {
               name: "การจำแนกสารรอบตัว",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
             {
               name: "test2",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test3",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test4",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test5",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
           ],
         },
@@ -296,36 +334,42 @@ export default function MainCoursepage() {
           name: "บทที่ 2 การจำแนกสาร",
           description: "..",
           subLeasonId: 1,
+          time: 10,
           subLeason: [
             {
               name: "การจำแนกสารรอบตัว",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
             {
               name: "test2",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test3",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test4",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test5",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
           ],
         },
@@ -334,12 +378,14 @@ export default function MainCoursepage() {
           name: "บทที่ 3 การจำแนกสาร",
           description: "..",
           subLeasonId: 2,
+          time: 10,
           subLeason: [
             {
               name: "สารละลาย",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
           ],
         },
@@ -353,42 +399,48 @@ export default function MainCoursepage() {
       time_max: 44,
       status: false,
       course_img: "src/assets/cardbg.jpg",
-      leasonId: 1,
-      leason: [
+      lessonId: 1,
+      lesson: [
         {
           name: "บทที่ 1 การจำแนกสาร",
           description: "..",
           subLeasonId: 1,
+          time: 10,
           subLeason: [
             {
               name: "การจำแนกสารรอบตัว",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
             {
               name: "test2",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test3",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test4",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test5",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
           ],
         },
@@ -396,36 +448,42 @@ export default function MainCoursepage() {
           name: "บทที่ 2 การจำแนกสาร",
           description: "..",
           subLeasonId: 1,
+          time: 10,
           subLeason: [
             {
               name: "การจำแนกสารรอบตัว",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
             {
               name: "test2",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test3",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test4",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test5",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
           ],
         },
@@ -434,12 +492,14 @@ export default function MainCoursepage() {
           name: "บทที่ 3 การจำแนกสาร",
           description: "..",
           subLeasonId: 2,
+          time: 10,
           subLeason: [
             {
               name: "สารละลาย",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
           ],
         },
@@ -453,96 +513,51 @@ export default function MainCoursepage() {
       time_max: 44,
       status: false,
       course_img: "src/assets/cardbg.jpg",
-      leasonId: 1,
-      leason: [
+      lessonId: 1,
+      lesson: [
         {
           name: "บทที่ 1 การจำแนกสาร",
           description: "..",
           subLeasonId: 1,
+          time: 10,
           subLeason: [
             {
               name: "การจำแนกสารรอบตัว",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
             {
               name: "test2",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test3",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test4",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test5",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
           ],
         },
-        // {
-        //   name: "บทที่ 2 การจำแนกสาร",
-        //   description: "..",
-        //   subLeasonId: 1,
-        //   subLeason: [
-        //     {
-        //       name: "การจำแนกสารรอบตัว",
-        //       description: "...",
-        //       file: "...",
-        //       video: "...",
-        //     },
-        //     {
-        //       name: "test2",
-        //       description: "...",
-        //       file: "...",
-        //       video: "....",
-        //     },
-        //     {
-        //       name: "test3",
-        //       description: "...",
-        //       file: "...",
-        //       video: "....",
-        //     },
-        //     {
-        //       name: "test4",
-        //       description: "...",
-        //       file: "...",
-        //       video: "....",
-        //     },
-        //     {
-        //       name: "test5",
-        //       description: "...",
-        //       file: "...",
-        //       video: "....",
-        //     },
-        //   ],
-        // },
-
-        // {
-        //   name: "บทที่ 3 การจำแนกสาร",
-        //   description: "..",
-        //   subLeasonId: 2,
-        //   subLeason: [
-        //     {
-        //       name: "สารละลาย",
-        //       description: "...",
-        //       file: "...",
-        //       video: "...",
-        //     },
-        //   ],
-        // },
       ],
     },
     {
@@ -553,42 +568,48 @@ export default function MainCoursepage() {
       time_max: 44,
       status: false,
       course_img: "src/assets/cardbg.jpg",
-      leasonId: 1,
-      leason: [
+      lessonId: 1,
+      lesson: [
         {
           name: "บทที่ 1 การจำแนกสาร",
           description: "..",
           subLeasonId: 1,
+          time: 10,
           subLeason: [
             {
               name: "การจำแนกสารรอบตัว",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
             {
               name: "test2",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test3",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test4",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test5",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
           ],
         },
@@ -596,36 +617,42 @@ export default function MainCoursepage() {
           name: "บทที่ 2 การจำแนกสาร",
           description: "..",
           subLeasonId: 1,
+          time: 10,
           subLeason: [
             {
               name: "การจำแนกสารรอบตัว",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
             {
               name: "test2",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test3",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test4",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test5",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
           ],
         },
@@ -634,12 +661,14 @@ export default function MainCoursepage() {
           name: "บทที่ 3 การจำแนกสาร",
           description: "..",
           subLeasonId: 2,
+          time: 10,
           subLeason: [
             {
               name: "สารละลาย",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
           ],
         },
@@ -653,42 +682,48 @@ export default function MainCoursepage() {
       time_max: 44,
       status: false,
       course_img: "src/assets/cardbg.jpg",
-      leasonId: 1,
-      leason: [
+      lessonId: 1,
+      lesson: [
         {
           name: "บทที่ 1 การจำแนกสาร",
           description: "..",
           subLeasonId: 1,
+          time: 10,
           subLeason: [
             {
               name: "การจำแนกสารรอบตัว",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
             {
               name: "test2",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test3",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test4",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test5",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
           ],
         },
@@ -696,36 +731,42 @@ export default function MainCoursepage() {
           name: "บทที่ 2 การจำแนกสาร",
           description: "..",
           subLeasonId: 1,
+          time: 10,
           subLeason: [
             {
               name: "การจำแนกสารรอบตัว",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
             {
               name: "test2",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test3",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test4",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test5",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
           ],
         },
@@ -734,12 +775,14 @@ export default function MainCoursepage() {
           name: "บทที่ 3 การจำแนกสาร",
           description: "..",
           subLeasonId: 2,
+          time: 10,
           subLeason: [
             {
               name: "สารละลาย",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
           ],
         },
@@ -753,42 +796,48 @@ export default function MainCoursepage() {
       time_max: 44,
       status: false,
       course_img: "src/assets/cardbg.jpg",
-      leasonId: 1,
-      leason: [
+      lessonId: 1,
+      lesson: [
         {
           name: "บทที่ 1 การจำแนกสาร",
           description: "..",
           subLeasonId: 1,
+          time: 10,
           subLeason: [
             {
               name: "การจำแนกสารรอบตัว",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
             {
               name: "test2",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test3",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test4",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test5",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
           ],
         },
@@ -796,36 +845,42 @@ export default function MainCoursepage() {
           name: "บทที่ 2 การจำแนกสาร",
           description: "..",
           subLeasonId: 1,
+          time: 10,
           subLeason: [
             {
               name: "การจำแนกสารรอบตัว",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
             {
               name: "test2",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test3",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test4",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
             {
               name: "test5",
               description: "...",
               file: "...",
-              video: "....",
+
+              time: 6,
             },
           ],
         },
@@ -834,12 +889,14 @@ export default function MainCoursepage() {
           name: "บทที่ 3 การจำแนกสาร",
           description: "..",
           subLeasonId: 2,
+          time: 10,
           subLeason: [
             {
               name: "สารละลาย",
               description: "...",
               file: "...",
-              video: "...",
+
+              time: 6,
             },
           ],
         },
@@ -848,23 +905,16 @@ export default function MainCoursepage() {
   ];
 
   return (
-    <div>
-      <Navbar />
-
-      <SubHeader>คอร์สเรียนหลัก</SubHeader>
-
-      <div className="px-10 py-8 flex flex-wrap gap-10 bg-C-white">
-        {mockData.map((item) => (
-          <CourseCard
-            courseName={item.name}
-            courseDescription={item.description}
-            courseTimeMax={item.time_max}
-            coursePrice={item.price}
-            leason={item.leason}
-          />
-        ))}
-      </div>
-      <Footer />
-    </div>
+    <>
+      {mockData.map((item) => (
+        <CourseCard
+          courseName={item.name}
+          courseDescription={item.description}
+          courseTimeMax={item.time_max}
+          coursePrice={item.price}
+          lesson={item.lesson}
+        />
+      ))}
+    </>
   );
 }

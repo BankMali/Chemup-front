@@ -1,5 +1,6 @@
 import React from "react";
 import SubCourseCard from "../components/SubCourseCard";
+import MockDataSubCourseCard from "../components/MockDataSubCourseCard";
 
 export default function SubCourse() {
   return (
@@ -13,14 +14,15 @@ export default function SubCourse() {
 
       <div className="px-10 carousel carousel-center w-full overflow-x-scroll">
         {/* CARD */}
+        {/* <SubCourseCard />
         <SubCourseCard />
         <SubCourseCard />
         <SubCourseCard />
         <SubCourseCard />
         <SubCourseCard />
-        <SubCourseCard />
-        <SubCourseCard />
-        <SubCourseCard />
+        <SubCourseCard /> */}
+        {/* <SubCourseCard /> */}
+        <MockDataSubCourseCard />
         {/* ////////////// */}
       </div>
     </div>

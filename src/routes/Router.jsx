@@ -1,4 +1,9 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
 import Homepage from "../pages/Homepage";
 import AllCoursespage from "../pages/AllCoursespage";
 import MainCoursepage from "../pages/MainCoursepage";
@@ -13,75 +18,80 @@ import Adminpage from "../pages/Adminpage";
 import SubCourseDetailpage from "../pages/SubCourseDetailpage";
 import ChangePasswordpage from "../pages/ChangePasswordpage";
 import ForgetPasswordpage from "../pages/ForgetPasswordpage";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Homepage />,
-    // children: [],
-  },
-  {
-    path: "/allcourse",
-    element: <AllCoursespage />,
-    // children: [],
-  },
-  {
-    path: "/maincourse",
-    element: <MainCoursepage />,
-    // children: [],
-  },
-  {
-    path: "/subcourse",
-    element: <SubCoursepage />,
-    // children: [],
-  },
-  {
-    path: "/demoteach",
-    element: <DemoTeachpage />,
-    // children: [],
-  },
-  {
-    path: "/login",
-    element: <Loginpage />,
-    // children: [],
-  },
-  {
-    path: "/changepassword",
-    element: <ChangePasswordpage />,
-    // children: [],
-  },
-  {
-    path: "/register",
-    element: <Registerpage />,
-    // children: [],
-  },
-  {
-    path: "/forgetpassword",
-    element: <ForgetPasswordpage />,
-    // children: [],
-  },
-  {
-    path: "/userpage",
-    element: <Userpage />,
-    // children: [],
-  },
-  {
-    path: "/coursedetail",
-    element: <CourseDetailpage />,
-    // children: [],
-  },
-  {
-    path: "/subcoursedetail",
-    element: <SubCourseDetailpage />,
-    // children: [],
-  },
-  {
-    path: "/admin",
-    element: <Adminpage />,
-    // children: [],
-  },
-]);
+import { useAuth } from "../contexts/AuthContext";
 
 export default function Router() {
+  const { user } = useAuth();
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Homepage />,
+      // children: [],
+    },
+    {
+      path: "/allcourse",
+      element: <AllCoursespage />,
+      // children: [],
+    },
+    {
+      path: "/maincourse",
+      element: <MainCoursepage />,
+      // children: [],
+    },
+    {
+      path: "/subcourse",
+      element: <SubCoursepage />,
+      // children: [],
+    },
+    {
+      path: "/demoteach",
+      element: <DemoTeachpage />,
+      // children: [],
+    },
+    {
+      path: "/login",
+      //   element: <Loginpage />,
+      element: user ? <Navigate to="/" /> : <Loginpage />,
+      // children: [],
+    },
+    {
+      path: "/changepassword",
+      element: user ? <Navigate to="/changepassword" /> : <Loginpage />,
+      // children: [],
+    },
+    {
+      path: "/register",
+      element: user ? <Navigate to="/" /> : <Registerpage />,
+      // children: [],
+    },
+    {
+      path: "/forgetpassword",
+      element: <ForgetPasswordpage />,
+      // children: [],
+    },
+    {
+      path: "/userpage",
+      //   element: <Userpage />,
+      element: user ? <Userpage /> : <Homepage />,
+      // children: [],
+    },
+    {
+      path: "/coursedetail",
+      element: <CourseDetailpage />,
+      // children: [],
+    },
+    {
+      path: "/subcoursedetail",
+      element: <SubCourseDetailpage />,
+      // children: [],
+    },
+    {
+      path: "/admin",
+      element: <Adminpage />,
+      // children: [],
+    },
+  ]);
+
   return <RouterProvider router={router} />;
 }
