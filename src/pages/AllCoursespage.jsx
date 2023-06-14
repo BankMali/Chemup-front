@@ -7,8 +7,10 @@ import SubCourseCard from "../components/SubCourseCard";
 import Footer from "../layouts/Footer";
 import Navbar from "../layouts/Navbar";
 import SubHeader from "../layouts/SubHeader";
-import { getAllCourse } from "../api/chemupApi";
+import { getAllCourse, deleteCourse } from "../api/chemupApi";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import CourseCard from "../components/CourseCard";
 
 export default function AllCoursespage() {
@@ -16,10 +18,11 @@ export default function AllCoursespage() {
 
   const hdlRemove = (index) => {
     const list = [...course];
+    console.log(list[1].id);
     deleteCourse(list[index].id);
     list.splice(index, 1);
     setCourse(list);
-    console.log(list);
+    // console.log(list);
   };
 
   // const hdlRemove
@@ -49,9 +52,11 @@ export default function AllCoursespage() {
               lesson={el.Lessons.map((el) => (
                 <li>{el.lessonName}</li>
               ))}
-              onClickRemove={() => hdlRemove(index)}
-              onClickEdit=""
             />
+            {<button onClick={() => hdlRemove(index)}>Remove</button>}
+            <Link className="btn btn-circle" to={`/editcourse/${el.id}`}>
+              Edit add
+            </Link>
 
             {/* loop container */}
             {/* <div key={index}>

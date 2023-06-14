@@ -17,6 +17,7 @@ export default function CourseCard({
   id,
 }) {
   const { user } = useAuth();
+
   return (
     <div
       key={key}

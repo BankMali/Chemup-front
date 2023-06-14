@@ -28,7 +28,7 @@ export const getAllCourse = () => {
   return chemupApi.get("/course/");
 };
 export const deleteCourse = (id) => {
-  return chemupApi.delete(`/course/deleteCourse/:${id}`);
+  return chemupApi.delete(`/course/${id}`);
 };
 
 //// course
@@ -39,6 +39,21 @@ export const addCourse = (input, lesson, token) => {
     { input, lesson },
     addToken(token)
   );
+};
+
+//// EditCourse
+export const getCourseById = (id) => {
+  return chemupApi.get(`/course/${id}`);
+};
+export const getLessonById = (id) => {
+  return chemupApi.get(`/lesson/${id}`);
+};
+
+export const updateCourse = (id, input) => {
+  return chemupApi.put(`/course/${id}`, input);
+};
+export const updateLesson = (id, input) => {
+  return chemupApi.put(`/lesson/${id}`, input);
 };
 
 // export const deleteCourse = (token) => {
