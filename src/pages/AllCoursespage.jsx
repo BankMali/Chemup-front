@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import CourseCard from "../components/CourseCard";
+import MockDataCourseCard from "../components/mockDataCourseCard";
 
 export default function AllCoursespage() {
   const [course, setCourse] = useState([]);
@@ -40,35 +41,7 @@ export default function AllCoursespage() {
       <SubHeader>คอร์สเรียนทั้งหมด</SubHeader>
 
       <div className="px-10 py-8 flex flex-wrap gap-10 bg-C-white">
-        {course.map((el, index) => (
-          <>
-            <CourseCard
-              // id=""
-              key={index}
-              courseName={el.name}
-              courseDescription={el.description}
-              courseTimeMax={el.timeMax}
-              coursePrice={el.price}
-              lesson={el.Lessons.map((el) => (
-                <li>{el.lessonName}</li>
-              ))}
-            />
-            {<button onClick={() => hdlRemove(index)}>Remove</button>}
-            <Link className="btn btn-circle" to={`/editcourse/${el.id}`}>
-              Edit add
-            </Link>
-
-            {/* loop container */}
-            {/* <div key={index}>
-            <h2>{el.name}</h2>
-            <h2>{el.description}</h2>
-            <h2>{el.Lessons.map((el) => el.lessonName)}</h2>
-            <h2>{el.price}</h2>
-            <h2>{el.timeMax}</h2>
-            <button onClick={() => hdlRemove(index)}>Remove</button>
-          </div> */}
-          </>
-        ))}
+        <MockDataCourseCard />
       </div>
 
       <SubHeader>คอร์สเรียนบทย่อย</SubHeader>

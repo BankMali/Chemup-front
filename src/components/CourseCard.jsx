@@ -2,6 +2,7 @@ import React from "react";
 import ButtonYellow from "./ButtonYellow";
 import { BiTimeFive } from "react-icons/bi";
 import { useAuth } from "../contexts/AuthContext";
+import { Link } from "react-router-dom";
 
 export default function CourseCard({
   courseName,
@@ -10,19 +11,14 @@ export default function CourseCard({
   coursePrice,
   lesson,
   key,
-  onClickRemove,
-  onClickEdit,
-  deletename,
-  value,
-  id,
 }) {
   const { user } = useAuth();
 
   return (
     <div
       key={key}
-      className="h-auto w-[280px] flex flex-col items-center gap-5 scale-90 mt-5">
-      <div className=" flex justify-center w-fit h-fit absolute top-[-35px] right-0 left-[240px] bottom-0 ">
+      className="h-auto w-[280px] flex flex-col items-center gap-5 scale-90">
+      {/* <div className=" flex justify-center w-fit h-fit absolute top-[-35px] right-0 left-[240px] bottom-0 ">
         {user ? (
           <button
             id={id}
@@ -57,7 +53,8 @@ export default function CourseCard({
             edit
           </button>
         )}
-      </div>
+      </div> */}
+
       <a href="/coursedetail">
         <div className="h-auto w-[280px] flex flex-col justify-between  rounded-3xl shadow-lg hover:scale-105 active:scale-100 transition duration-200 carousel-item">
           <div className=" h-[80px] rounded-t-3xl bg-[url('/src/assets/cardbg.jpg')] bg-cover relative">

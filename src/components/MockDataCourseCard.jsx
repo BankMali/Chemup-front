@@ -1,6 +1,9 @@
 // import CourseCard from "./CourseCard";
 import { getAllCourse, deleteCourse } from "../api/chemupApi";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
+
 import CourseCard from "../components/CourseCard";
 
 export default function MockDataCourseCard() {
@@ -908,24 +911,23 @@ export default function MockDataCourseCard() {
   // ];
 
   const [course, setCourse] = useState([]);
-  //  const input = {id}
+  const { user } = useAuth();
+  // const [course, setCourse] = useState([]);
 
-  // const hdlRemove = (index) => {
-  //   const list = [...course];
-  //   deleteCourse(list[index].id);
-  //   list.splice(index, 1);
-  //   setCourse(list);
-  // };
+  const hdlRemove = (index) => {
+    const list = [...course];
+    console.log(list[1].id);
+    deleteCourse(list[index].id);
+    list.splice(index, 1);
+    setCourse(list);
+    // console.log(list);
+  };
 
-  // const hdlRemove = (index) => {
-  //   const list = [...course];
-  //   list.splice(index, 1);
-  //   setCourse(list);
-  // };
+  // const hdlRemove
 
   useEffect(() => {
     getAllCourse().then((rs) => {
-      // console.log(rs.data);
+      console.log(rs.data);
       setCourse(rs.data);
     });
   }, []);
@@ -933,7 +935,40 @@ export default function MockDataCourseCard() {
   return (
     <>
       {course.map((el, index) => (
-        <>
+        <div className=" flex flex-col mt-5">
+          <div className="flex mb-[-15px]">
+            <div className=" flex justify-center w-fit px-5 mr-[140px]">
+              {user ? (
+                <Link to={`/editcourse/${el.id}`}>
+                  <button className=" bg-C-gray2 hover:bg-C-gray3 w-fit h-7 flex justify-center pt-[2px] rounded-xl px-2 text-white ">
+                    edit
+                  </button>
+                </Link>
+              ) : (
+                <Link to={`/editcourse/${el.id}`}>
+                  <button className=" bg-C-gray2 hover:bg-C-gray3 w-fit h-7 flex justify-center pt-[2px] rounded-xl px-2 text-white invisible">
+                    edit
+                  </button>
+                </Link>
+              )}
+            </div>
+            <div className=" flex justify-center w-fit h-fit">
+              {user ? (
+                <button
+                  onClick={() => hdlRemove(index)}
+                  className=" bg-C-gray2  hover:bg-C-gray3 w-7 h-7 flex justify-center pt-[2px] rounded-full text-white">
+                  X
+                </button>
+              ) : (
+                <button
+                  onClick={() => hdlRemove(index)}
+                  className=" bg-C-gray2  hover:bg-C-gray3 w-7 h-7 flex justify-center pt-[2px] rounded-full text-white invisible">
+                  X
+                </button>
+              )}
+            </div>
+          </div>
+
           <CourseCard
             key={index}
             courseName={el.name}
@@ -943,11 +978,13 @@ export default function MockDataCourseCard() {
             lesson={el.Lessons.map((el) => (
               <li>{el.lessonName}</li>
             ))}
-            // onClickRemove={() => hdlRemove(index)}
-            onClickEdit=""
-
-            // name="id"
+            onClickRemove={() => hdlRemove(index)}
           />
+
+          {/* {<button onClick={() => hdlRemove(index)}>Remove</button>}
+          <Link className="btn btn-circle" toi={`/editcourse/${el.id}`}>
+            Edit
+          </Link> */}
 
           {/* loop container */}
           {/* <div key={index}>
@@ -958,7 +995,7 @@ export default function MockDataCourseCard() {
             <h2>{el.timeMax}</h2>
             <button onClick={() => hdlRemove(index)}>Remove</button>
           </div> */}
-        </>
+        </div>
       ))}
     </>
   );

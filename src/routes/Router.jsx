@@ -78,7 +78,7 @@ export default function Router() {
       // children: [],
     },
     {
-      path: "/coursedetail",
+      path: "/coursedetail/:id",
       element: <CourseDetailpage />,
       // children: [],
     },
