@@ -853,7 +853,7 @@ export default function MainCourse() {
         </a>
       </div>
 
-      <div className="px-10  carousel carousel-center w-full">
+      <div className="px-10 carousel carousel-center w-full overflow-x-scroll">
         <MockDataCourseCard />
       </div>
     </div>

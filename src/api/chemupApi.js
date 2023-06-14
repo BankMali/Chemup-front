@@ -27,9 +27,8 @@ export const getMe = (token) => {
 export const getAllCourse = () => {
   return chemupApi.get("/course/");
 };
-
-export const getAllLesson = () => {
-  return chemupApi.get("/lesson/");
+export const deleteCourse = (id) => {
+  return chemupApi.delete(`/course/deleteCourse/:${id}`);
 };
 
 //// course

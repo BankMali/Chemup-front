@@ -7,6 +7,8 @@ import SubHeader from "../layouts/SubHeader";
 import { BiTimeFive } from "react-icons/bi";
 // import MockDataCourseCard from "../components/mockDataCours/eCard";
 import { addCourse } from "../api/chemupApi";
+import ButtonGhostXs from "../components/ButtonGhostXs";
+import MockDataCourseCard from "../components/mockDataCourseCard";
 
 // const inititialValue = {
 //   name: "",
@@ -33,13 +35,14 @@ export default function Adminpage() {
     timeMax: "",
   });
 
-  const [lesson, setLesson] = useState([{ name: "" }]);
+  const [lesson, setLesson] = useState([{ lessonName: "" }]);
 
   const hdlChangeLesson = (e, index) => {
     const { name, value } = e.target;
     const list = [...lesson];
     list[index][name] = value;
     setLesson(list);
+    // console.log(value);
   };
 
   const hdlChangeInput = (e) => {
@@ -48,8 +51,8 @@ export default function Adminpage() {
   };
 
   const hdlAddclick = () => {
-    console.log("dwdwdwdwwwdwdwdwdwdwdw");
-    setLesson([...lesson, { name: "" }]);
+    // console.log("dwdwdwdwwwdwdwdwdwdwdw");
+    setLesson([...lesson, { lessonName: "" }]);
   };
 
   const hdlRemove = (index) => {
@@ -65,13 +68,13 @@ export default function Adminpage() {
     e.preventDefault();
     // console.log(input);
     addCourse(input, lesson);
-
-    console
-      .log(lesson)
-      .then((rs) => {
-        console.log(rs);
-      })
-      .catch((err) => console.log(err));
+    // console.log(lesson);
+    // console
+    //   .log(lesson)
+    //   .then((rs) => {
+    //     console.log(rs);
+    //   })
+    //   .catch((err) => console.log(err));
   };
 
   return (
@@ -80,6 +83,7 @@ export default function Adminpage() {
       <SubHeader>ADmin</SubHeader>
 
       <div className="px-10 py-8 flex flex-wrap justify-center items-start gap-10 bg-C-white">
+        {/* Create form ///////// */}
         <form>
           <div className="flex justify-center gap-5 m-10">
             <div className="flex flex-col w-[35%] text-center gap-2">
@@ -103,190 +107,34 @@ export default function Adminpage() {
                 />
               </div>
               <div className="gap-2 fle flex-col">
-                <label for="cars">เลือกบท</label>
+                <label for="cars">เพิ่มบท</label>
 
                 {lesson.map((item, index) => (
-                  <div className="" key={index}>
+                  <div className="flex-col gap-2" key={index}>
                     <div>
                       <Inputbar
-                        value={item.name}
+                        value={item.lessonName}
                         // error={errorSurname}
                         onChange={(e) => hdlChangeLesson(e, index)}
-                        name="name"
+                        name="lessonName"
                         title="name"
                       />
                     </div>
-                    {lesson.length !== 1 && (
-                      <button onClick={() => hdlRemove(index)}>ลบ</button>
-                    )}
-                    {lesson.length - 1 === index && (
-                      <button onClick={hdlAddclick}>เพิ่ม</button>
-                    )}
+                    <div className="flex justify-around my-2">
+                      {lesson.length - 1 === index && (
+                        <ButtonGhostXs onClick={hdlAddclick}>
+                          เพิ่ม
+                        </ButtonGhostXs>
+                      )}
+                      {lesson.length !== 1 && (
+                        <ButtonGhostXs onClick={() => hdlRemove(index)}>
+                          ลบ
+                        </ButtonGhostXs>
+                      )}
+                    </div>
                   </div>
                 ))}
 
-                {/* //////////// */}
-                {/* <select
-                  value=""
-                  type="select"
-                  onChange=""
-                  name=""
-                  placeholder="เลือกบทย่อย"
-                  className="text-C-gray3 outline outline-C-gray1 rounded-xl py-2 px-4 w-full bg-white outline-2 border mt-2">
-                  <option
-                    value="บทที่ 1 การจำแนกสาร"
-                    name="บทที่ 1 การจำแนกสาร">
-                    บทที่ 1 การจำแนกสาร
-                  </option>
-
-                  <option value="2">บทที่ 2 ธาตุและสารประกอบ</option>
-                  <option value="volvo">บทที่ 3 สารละลายกรด-เบส</option>
-                  <option value="volvo">บทที่ 4 การแยกสาร</option>
-                  <option value="volvo">บทที่ 5 การเปลี่ยนแปลงของสาร</option>
-                  <option value="volvo">
-                    บทที่ 1 ความปลอดภัยและทักษะในปฏิบัติการเคมี
-                  </option>
-                  <option value="volvo">บทที่ 2 อะตอมและสมบัติของธาตุ</option>
-                  <option value="volvo">บทที่ 3 พันธะเคมี</option>
-                  <option value="volvo">บทที่ 4 โมลและสูตรเคมี</option>
-                  <option value="volvo">บทที่ 5 สารละลาย</option>
-                  <option value="volvo">บทที่ 6 ปริมาณสัมพันธ์</option>
-                  <option value="volvo">บทที่ 7 แก๊สและสมบัติของแก๊ส</option>
-                  <option value="volvo">
-                    บทที่ 8 อัตราการเกิดปฏิกิริยาเคมี
-                  </option>
-                  <option value="volvo">บทที่ 9 สมดุลเคมี</option>
-                  <option value="volvo">บทที่ 10 กรด-เบส</option>
-                  <option value="volvo">บทที่ 11 เคมีไฟฟ้า</option>
-                  <option value="volvo">บทที่ 12 เคมีอินทรีย์</option>
-                  <option value="volvo">บทที่ 13 พอลิเมอร์</option>
-                </select>
-                <select
-                  value=""
-                  type="select"
-                  // error={errorSurname}
-                  onChange="{hdlChangeInput}"
-                  name=""
-                  placeholder="เลือกบทย่อย"
-                  className="text-C-gray3 outline outline-C-gray1 rounded-xl py-2 px-4 w-full bg-white outline-2 border mt-2">
-                  <option value="1">บทที่ 1 การจำแนกสาร</option>
-                  <option value="2">บทที่ 2 ธาตุและสารประกอบ</option>
-                  <option value="volvo">บทที่ 3 สารละลายกรด-เบส</option>
-                  <option value="volvo">บทที่ 4 การแยกสาร</option>
-                  <option value="volvo">บทที่ 5 การเปลี่ยนแปลงของสาร</option>
-                  <option value="volvo">
-                    บทที่ 1 ความปลอดภัยและทักษะในปฏิบัติการเคมี
-                  </option>
-                  <option value="volvo">บทที่ 2 อะตอมและสมบัติของธาตุ</option>
-                  <option value="volvo">บทที่ 3 พันธะเคมี</option>
-                  <option value="volvo">บทที่ 4 โมลและสูตรเคมี</option>
-                  <option value="volvo">บทที่ 5 สารละลาย</option>
-                  <option value="volvo">บทที่ 6 ปริมาณสัมพันธ์</option>
-                  <option value="volvo">บทที่ 7 แก๊สและสมบัติของแก๊ส</option>
-                  <option value="volvo">
-                    บทที่ 8 อัตราการเกิดปฏิกิริยาเคมี
-                  </option>
-                  <option value="volvo">บทที่ 9 สมดุลเคมี</option>
-                  <option value="volvo">บทที่ 10 กรด-เบส</option>
-                  <option value="volvo">บทที่ 11 เคมีไฟฟ้า</option>
-                  <option value="volvo">บทที่ 12 เคมีอินทรีย์</option>
-                  <option value="volvo">บทที่ 13 พอลิเมอร์</option>
-                </select>
-                <select
-                  value=""
-                  type="select"
-                  // error={errorSurname}
-                  onChange="{hdlChangeInput}"
-                  name=""
-                  placeholder="เลือกบทย่อย"
-                  className="text-C-gray3 outline outline-C-gray1 rounded-xl py-2 px-4 w-full bg-white outline-2 border mt-2">
-                  <option value="1">บทที่ 1 การจำแนกสาร</option>
-                  <option value="2">บทที่ 2 ธาตุและสารประกอบ</option>
-                  <option value="volvo">บทที่ 3 สารละลายกรด-เบส</option>
-                  <option value="volvo">บทที่ 4 การแยกสาร</option>
-                  <option value="volvo">บทที่ 5 การเปลี่ยนแปลงของสาร</option>
-                  <option value="volvo">
-                    บทที่ 1 ความปลอดภัยและทักษะในปฏิบัติการเคมี
-                  </option>
-                  <option value="volvo">บทที่ 2 อะตอมและสมบัติของธาตุ</option>
-                  <option value="volvo">บทที่ 3 พันธะเคมี</option>
-                  <option value="volvo">บทที่ 4 โมลและสูตรเคมี</option>
-                  <option value="volvo">บทที่ 5 สารละลาย</option>
-                  <option value="volvo">บทที่ 6 ปริมาณสัมพันธ์</option>
-                  <option value="volvo">บทที่ 7 แก๊สและสมบัติของแก๊ส</option>
-                  <option value="volvo">
-                    บทที่ 8 อัตราการเกิดปฏิกิริยาเคมี
-                  </option>
-                  <option value="volvo">บทที่ 9 สมดุลเคมี</option>
-                  <option value="volvo">บทที่ 10 กรด-เบส</option>
-                  <option value="volvo">บทที่ 11 เคมีไฟฟ้า</option>
-                  <option value="volvo">บทที่ 12 เคมีอินทรีย์</option>
-                  <option value="volvo">บทที่ 13 พอลิเมอร์</option>
-                </select>
-                <select
-                  value=""
-                  type="select"
-                  // error={errorSurname}
-                  onChange="{hdlChangeInput}"
-                  name=""
-                  placeholder="เลือกบทย่อย"
-                  className="text-C-gray3 outline outline-C-gray1 rounded-xl py-2 px-4 w-full bg-white outline-2 border mt-2">
-                  <option value="1">บทที่ 1 การจำแนกสาร</option>
-                  <option value="2">บทที่ 2 ธาตุและสารประกอบ</option>
-                  <option value="volvo">บทที่ 3 สารละลายกรด-เบส</option>
-                  <option value="volvo">บทที่ 4 การแยกสาร</option>
-                  <option value="volvo">บทที่ 5 การเปลี่ยนแปลงของสาร</option>
-                  <option value="volvo">
-                    บทที่ 1 ความปลอดภัยและทักษะในปฏิบัติการเคมี
-                  </option>
-                  <option value="volvo">บทที่ 2 อะตอมและสมบัติของธาตุ</option>
-                  <option value="volvo">บทที่ 3 พันธะเคมี</option>
-                  <option value="volvo">บทที่ 4 โมลและสูตรเคมี</option>
-                  <option value="volvo">บทที่ 5 สารละลาย</option>
-                  <option value="volvo">บทที่ 6 ปริมาณสัมพันธ์</option>
-                  <option value="volvo">บทที่ 7 แก๊สและสมบัติของแก๊ส</option>
-                  <option value="volvo">
-                    บทที่ 8 อัตราการเกิดปฏิกิริยาเคมี
-                  </option>
-                  <option value="volvo">บทที่ 9 สมดุลเคมี</option>
-                  <option value="volvo">บทที่ 10 กรด-เบส</option>
-                  <option value="volvo">บทที่ 11 เคมีไฟฟ้า</option>
-                  <option value="volvo">บทที่ 12 เคมีอินทรีย์</option>
-                  <option value="volvo">บทที่ 13 พอลิเมอร์</option>
-                </select>
-                <select
-                  value=""
-                  type="select"
-                  // error={errorSurname}
-                  onChange="{hdlChangeInput}"
-                  name=""
-                  placeholder="เลือกบทย่อย"
-                  className="text-C-gray3 outline outline-C-gray1 rounded-xl py-2 px-4 w-full bg-white outline-2 border mt-2">
-                  <option value="1">บทที่ 1 การจำแนกสาร</option>
-                  <option value="2">บทที่ 2 ธาตุและสารประกอบ</option>
-                  <option value="volvo">บทที่ 3 สารละลายกรด-เบส</option>
-                  <option value="volvo">บทที่ 4 การแยกสาร</option>
-                  <option value="volvo">บทที่ 5 การเปลี่ยนแปลงของสาร</option>
-                  <option value="volvo">
-                    บทที่ 1 ความปลอดภัยและทักษะในปฏิบัติการเคมี
-                  </option>
-                  <option value="volvo">บทที่ 2 อะตอมและสมบัติของธาตุ</option>
-                  <option value="volvo">บทที่ 3 พันธะเคมี</option>
-                  <option value="volvo">บทที่ 4 โมลและสูตรเคมี</option>
-                  <option value="volvo">บทที่ 5 สารละลาย</option>
-                  <option value="volvo">บทที่ 6 ปริมาณสัมพันธ์</option>
-                  <option value="volvo">บทที่ 7 แก๊สและสมบัติของแก๊ส</option>
-                  <option value="volvo">
-                    บทที่ 8 อัตราการเกิดปฏิกิริยาเคมี
-                  </option>
-                  <option value="volvo">บทที่ 9 สมดุลเคมี</option>
-                  <option value="volvo">บทที่ 10 กรด-เบส</option>
-                  <option value="volvo">บทที่ 11 เคมีไฟฟ้า</option>
-                  <option value="volvo">บทที่ 12 เคมีอินทรีย์</option>
-                  <option value="volvo">บทที่ 13 พอลิเมอร์</option>
-                </select> */}
-
-                {/* ////////////// */}
                 <div className="mt-4 flex gap-5">
                   <Inputbar
                     value={input.timeMax}
@@ -326,7 +174,11 @@ export default function Adminpage() {
                     {input.description || "รายละเอียดคอร์ส"}
                   </p>
                   <ul className=" text-left text-sm text-C-white pt-3">
-                    <li>itemname</li>
+                    {/* {lesson.map((el) => (
+                      <li>{el.value}</li>
+                    ))} */}
+                    {/* <li>{lesson.map}</li> */}
+                    <li>lesson list</li>
                   </ul>
                 </div>
                 <div className=" bg-C-gray3 h-[35px] rounded-b-3xl flex justify-between items-center px-5 text-sm">
@@ -346,6 +198,8 @@ export default function Adminpage() {
             </div>
           </div>
         </form>
+
+        <MockDataCourseCard />
 
         <div className="overflow-x-auto">
           <table className="table table-xs">

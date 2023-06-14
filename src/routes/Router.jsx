@@ -88,7 +88,8 @@ export default function Router() {
     },
     {
       path: "/admin",
-      element: <Adminpage />,
+      // element: <Adminpage />,
+      element: user ? <Adminpage /> : <Homepage />,
       // children: [],
     },
   ]);

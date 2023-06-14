@@ -13,7 +13,7 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    console.log(user);
+    // console.log(user);
   }, [user]);
 
   return (
@@ -104,22 +104,36 @@ export default function Navbar() {
                     <img src="/src/assets/blank.png" className=" " />
                   </div>
                 </label>
-                {/* <ul
-                  tabIndex={0}
-                  className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-white rounded-box w-52">
-                  <li>
-                    <a className="justify-between">
-                      Profile
-                      <span className="badge">New</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a>Settings</a>
-                  </li>
-                  <li>
-                    <a>Logout</a>
-                  </li>
-                </ul> */}
+                {/* dropdown///////////////// */}
+                {user ? (
+                  <ul
+                    tabIndex={0}
+                    className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-white rounded-box w-52">
+                    <li>
+                      <a href="/userpage" className="justify-between">
+                        ข้อมูลของฉัน
+                        {/* <span className="badge">New</span> */}
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/admin">Admin</a>
+                    </li>
+                    <li>
+                      <a onClick={hdlLogout}>Logout</a>
+                    </li>
+                  </ul>
+                ) : (
+                  <ul
+                    tabIndex={0}
+                    className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-white rounded-box w-52">
+                    <li>
+                      <a className="justify-between">
+                        เข้าสู่ระบบ
+                        {/* <span className="badge">New</span> */}
+                      </a>
+                    </li>
+                  </ul>
+                )}
               </div>
               <div className="ctive:scale-100 duration-150 hover:scale-105">
                 {user ? (
