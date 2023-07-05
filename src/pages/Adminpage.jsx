@@ -10,23 +10,6 @@ import { addCourse } from "../api/chemupApi";
 import ButtonGhostXs from "../components/ButtonGhostXs";
 import MockDataCourseCard from "../components/mockDataCourseCard";
 
-// const inititialValue = {
-//   name: "",
-//   description: "",
-//   price: "",
-//   timeMax: "",
-//   courseImg: "",
-//   color: "",
-// };
-
-// const inititialValueLesson = {
-//   name: "",
-//   description: "",
-//   time: "",
-//   price: "",
-//   color: "",
-// };
-
 export default function Adminpage() {
   const [input, setInput] = useState({
     name: "",
@@ -57,6 +40,7 @@ export default function Adminpage() {
 
   const hdlRemove = (index) => {
     const list = [...lesson];
+
     list.splice(index, 1);
     setLesson(list);
   };
@@ -193,7 +177,7 @@ export default function Adminpage() {
               </div>
               <div className="flex gap-5">
                 <ButtonYellow onclick={hdlSubmit}>สร้าง</ButtonYellow>
-                <ButtonYellow type="reset">ล้าง</ButtonYellow>
+                {/* <ButtonYellow type="reset">ล้าง</ButtonYellow> */}
               </div>
             </div>
           </div>

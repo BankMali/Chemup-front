@@ -127,7 +127,7 @@ export default function Navbar() {
                     tabIndex={0}
                     className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-white rounded-box w-52">
                     <li>
-                      <a className="justify-between">
+                      <a href="/login" className="justify-between">
                         เข้าสู่ระบบ
                         {/* <span className="badge">New</span> */}
                       </a>

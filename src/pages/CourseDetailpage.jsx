@@ -6,10 +6,36 @@ import CourseCard from "../components/CourseCard";
 import Footer from "../layouts/Footer";
 import Navbar from "../layouts/Navbar";
 import SubHeader from "../layouts/SubHeader";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
+import { getAllCourse } from "../api/chemupApi";
 
 export default function CourseDetailpage() {
+  const [course, setCourse] = useState([]);
+  const { user } = useAuth();
+  // const { id } = useParams();
+  // console.log(id);
+
+  // const courses = course.map((course) => {
+  //   const list = [...course];
+  //   console.log(list[2].id);
+  //   return;
+  // });
+
+  // console.log(course.id);
+  // console.log(course.name);
+
+  useEffect(() => {
+    getAllCourse().then((rs) => {
+      console.log(rs.data);
+      setCourse(rs.data);
+    });
+  }, []);
+
   return (
     <div>
+      <p>{course.id}</p>
       <Navbar />
       <SubHeader>รายละเอียด คอร์สเรียน เคมีม.ต้น</SubHeader>
       <div className="px-10 py-8 flex flex-wrap justify-center items-start gap-10 bg-C-white">
@@ -17,6 +43,17 @@ export default function CourseDetailpage() {
         <div className="flex-1 flex flex-col gap-5 justify-around items-center">
           <div className="flex gap-3">
             <CourseCard />
+            {/* <CourseCard
+              // key={index}
+              courseName={el.name}
+              courseDescription={el.description}
+              courseTimeMax={el.timeMax}
+              coursePrice={el.price}
+              lesson={el.Lessons.map((el) => (
+                <li>{el.lessonName}</li>
+              ))}
+              onClickRemove={() => hdlRemove(index)}
+            /> */}
           </div>
         </div>
         {/* //////// */}
@@ -35,7 +72,13 @@ export default function CourseDetailpage() {
             <p className=" font-bold">ราคา 2,990 บาท</p>
             <div className="flex gap-3 py-3">
               <ButtonYellowXs>เพิ่มลงตะกร้า</ButtonYellowXs>
-              <ButtonBlueXs>เข้าสู่ระบบเพื่อเริ่มเรียน</ButtonBlueXs>
+              {user ? (
+                <></>
+              ) : (
+                <ButtonBlueXs>เข้าสู่ระบบเพื่อเริ่มเรียน</ButtonBlueXs>
+              )}
+
+              {/* <ButtonBlueXs>เข้าสู่ระบบเพื่อเริ่มเรียน</ButtonBlueXs> */}
             </div>
           </div>
 

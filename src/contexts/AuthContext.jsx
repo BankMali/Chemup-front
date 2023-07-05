@@ -8,7 +8,8 @@ export default function AuthContextProvider(props) {
 
   useEffect(() => {
     let token = localStorage.getItem("token");
-    if (!token) return;
+    if (!token) 
+    return;
     getMe(token).then((rs) => {
       setUser(rs.data);
     });

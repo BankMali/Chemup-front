@@ -33,11 +33,6 @@ export default function Userpage() {
         <CourseCard />
         <CourseCard />
         <CourseCard />
-        <CourseCard />
-        <CourseCard />
-        <CourseCard />
-        <CourseCard />
-        <CourseCard />
       </div>
       <Footer />
     </div>

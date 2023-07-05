@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 
 import CourseCard from "../components/CourseCard";
 import MockDataCourseCard from "../components/mockDataCourseCard";
+import MockDataSubCourseCard from "../components/MockDataSubCourseCard";
 
 export default function AllCoursespage() {
   const [course, setCourse] = useState([]);
@@ -34,6 +35,7 @@ export default function AllCoursespage() {
       setCourse(rs.data);
     });
   }, []);
+
   return (
     <div>
       <Navbar />
@@ -47,48 +49,10 @@ export default function AllCoursespage() {
       <SubHeader>คอร์สเรียนบทย่อย</SubHeader>
 
       <div className="px-10 py-8 flex flex-wrap gap-10 bg-C-white">
-        {" "}
-        <SubCourseCard />
-        <SubCourseCard />
-        <SubCourseCard />
-        <SubCourseCard />
-        <SubCourseCard />
-        <SubCourseCard />
-        <SubCourseCard />
+        <MockDataSubCourseCard />
       </div>
 
       <Footer />
     </div>
   );
-}
-
-{
-  /* <div className="Card">
-        {course}
-        {lesson}
-      </div> */
-}
-
-{
-  /* <div className="px-10 py-8 flex flex-wrap gap-10 bg-C-white">
-        <MockDataCourseCard />
-      </div> */
-}
-{
-  /* <SubHeader>คอร์สเรียนบทย่อย</SubHeader> */
-}
-{
-  /* 
-      <div className="px-10 py-8 flex flex-wrap gap-10 bg-C-white"> */
-}
-{
-  /* <SubCourseCard />
-        <SubCourseCard />
-        <SubCourseCard />
-        <SubCourseCard />
-        <SubCourseCard />
-        <SubCourseCard />
-        <SubCourseCard />
-      </div>
-      // <Footer /> */
 }

@@ -434,31 +434,69 @@ export default function MockDataSubCourseCard() {
           time: 6,
         },
         {
-          name: "test2",
+          name: "การจำแนกสารรอบตัว",
           description: "...",
           file: "...",
-
           time: 6,
         },
         {
-          name: "test3",
+          name: "การจำแนกสารรอบตัว",
           description: "...",
           file: "...",
-
           time: 6,
         },
         {
-          name: "test4",
+          name: "การจำแนกสารรอบตัว",
           description: "...",
           file: "...",
-
           time: 6,
         },
         {
-          name: "test5",
+          name: "การจำแนกสารรอบตัว",
           description: "...",
           file: "...",
-
+          time: 6,
+        },
+        {
+          name: "การจำแนกสารรอบตัว",
+          description: "...",
+          file: "...",
+          time: 6,
+        },
+        {
+          name: "การจำแนกสารรอบตัว",
+          description: "...",
+          file: "...",
+          time: 6,
+        },
+        {
+          name: "การจำแนกสารรอบตัว",
+          description: "...",
+          file: "...",
+          time: 6,
+        },
+        {
+          name: "การจำแนกสารรอบตัว",
+          description: "...",
+          file: "...",
+          time: 6,
+        },
+        {
+          name: "การจำแนกสารรอบตัว",
+          description: "...",
+          file: "...",
+          time: 6,
+        },
+        {
+          name: "การจำแนกสารรอบตัว",
+          description: "...",
+          file: "...",
+          time: 6,
+        },
+        {
+          name: "การจำแนกสารรอบตัว",
+          description: "...",
+          file: "...",
           time: 6,
         },
       ],
@@ -1273,7 +1311,7 @@ export default function MockDataSubCourseCard() {
           lcourseName={item.name}
           lcourseDescription={item.description}
           lcourseTimeMax={item.time}
-          lcoursePrice={item.price}
+          lcoursePrice={item.id}
           lesson={item.subLesson}
         />
       ))}

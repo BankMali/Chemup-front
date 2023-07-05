@@ -9,8 +9,12 @@ import axios from "axios";
 import InputErrorMessage from "../components/InputErrorMessage";
 import InputTextArea from "./InputTextArea";
 import { register } from "../api/chemupApi";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Registerpage() {
+  const navigate = useNavigate();
+
   const [input, setInput] = useState({
     firstName: "",
     lastName: "",
@@ -51,7 +55,7 @@ export default function Registerpage() {
     })
       .then((rs) => {
         console.log(rs);
-        // navigate("/");
+        navigate("/login");
       })
       .catch((err) => console.log(err));
   };
@@ -289,7 +293,9 @@ export default function Registerpage() {
 
               <div className=" flex gap-5 text-center justify-center">
                 <ButtonBlue type="submit">สมัครสมาชิก</ButtonBlue>
-                <ButtonGhost type="button">ยกเลิก</ButtonGhost>
+                <Link to="/">
+                  <ButtonGhost type="button">ยกเลิก</ButtonGhost>
+                </Link>
               </div>
               <div className=" flex gap-2 justify-end w-full pt-5">
                 <LoginTextLink />

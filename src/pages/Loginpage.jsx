@@ -11,6 +11,7 @@ import InputErrorMessage from "../components/InputErrorMessage";
 import { useAuth } from "../contexts/AuthContext";
 import { login, getMe } from "../api/chemupApi";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Loginpage() {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ export default function Loginpage() {
         // console.log(rs.data);
       })
       //   .catch((err) => alert(err.response.data.error || err.message));
-      .catch((err) => alert("Error JA"));
+      .catch((err) => alert("check you id or password"));
   };
 
   return (
@@ -65,12 +66,16 @@ export default function Loginpage() {
               value={input.password}
               onChange={hdlChangeInput}
               //   error={errorPassword}
+              type="password"
               name="password"
               title="Password"></Inputbar>
             <InputErrorMessage message={""} />
             <div className=" flex gap-5 text-center justify-center">
               <ButtonBlue type="submit">เข้าสู่ระบบ</ButtonBlue>
-              <ButtonGhost type="button">ยกเลิก</ButtonGhost>
+
+              <Link to="/">
+                <ButtonGhost type="reset">ยกเลิก</ButtonGhost>
+              </Link>
             </div>
             <div className=" flex gap-2 justify-end w-full pt-5">
               <RegisterTextLink />

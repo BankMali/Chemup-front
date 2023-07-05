@@ -20,6 +20,7 @@ import ChangePasswordpage from "../pages/ChangePasswordpage";
 import ForgetPasswordpage from "../pages/ForgetPasswordpage";
 import { useAuth } from "../contexts/AuthContext";
 import EditCourse from "../pages/EditCourse";
+import Paymentpage from "../pages/Paymentpage";
 
 export default function Router() {
   const { user } = useAuth();
@@ -97,6 +98,12 @@ export default function Router() {
       path: "/editcourse/:id",
       // element: <Adminpage />,
       element: <EditCourse />,
+      // children: [],
+    },
+    {
+      path: "/payment",
+      // element: <Adminpage />,
+      element: <Paymentpage />,
       // children: [],
     },
   ]);

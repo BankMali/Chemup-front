@@ -27,7 +27,7 @@ export default function SubCourseCard({
 
             <p className=" text-C-yellow3">{lcourseDescription}</p>
 
-            <ul className=" text-left text-sm text-C-white pt-3">
+            <ul className=" text-left text-sm text-C-white pt-3 overflow-auto h-28">
               {lesson?.map((item) => (
                 <li>{item.name}</li>
               ))}

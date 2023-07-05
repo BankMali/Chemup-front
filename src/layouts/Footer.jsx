@@ -4,11 +4,21 @@ export default function Footer() {
   return (
     <footer className="footer footer-center p-8 bg-C-gray3 text-base-content">
       <div className="grid grid-flow-col gap-4">
-        <a className="link link-hover">หน้าแรก</a>
-        <a className="link link-hover">คอร์สเรียน</a>
-        <a className="link link-hover">ตัวอย่างการสอน</a>
-        <a className="link link-hover">คอร์สเรียนหลัก</a>
-        <a className="link link-hover">คอร์สเรียนบทย่อย</a>
+        <a href="/" className="link link-hover">
+          หน้าแรก
+        </a>
+        <a href="/allcourse" className="link link-hover">
+          คอร์สเรียน
+        </a>
+        <a href="/demoteach" className="link link-hover">
+          ตัวอย่างการสอน
+        </a>
+        <a href="maincourse" className="link link-hover">
+          คอร์สเรียนหลัก
+        </a>
+        <a href="subcourse" className="link link-hover">
+          คอร์สเรียนบทย่อย
+        </a>
       </div>
       <div>
         <div className="grid grid-flow-col gap-4 m-[-2rem]">

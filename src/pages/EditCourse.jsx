@@ -81,7 +81,7 @@ export default function EditCourse() {
   };
 
   return (
-    <div>
+    <div className=" w-full bg-C-white">
       <Navbar />
       <SubHeader>EDIT</SubHeader>
       <form>
@@ -190,8 +190,8 @@ export default function EditCourse() {
               </div>
             </div>
             <div className="flex gap-5">
-              <ButtonYellow onclick={hdlSubmit}>สร้าง</ButtonYellow>
-              <ButtonYellow type="reset">ล้าง</ButtonYellow>
+              <ButtonYellow onclick={hdlSubmit}>แก้ไข</ButtonYellow>
+              {/* <ButtonYellow type="reset">ล้าง</ButtonYellow> */}
             </div>
           </div>
         </div>
