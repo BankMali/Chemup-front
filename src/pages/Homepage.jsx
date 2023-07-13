@@ -16,7 +16,7 @@ export default function Homepage() {
         <HeadContent />
         <Subbar />
         <MainCourse />
-        <SubCourse />
+        {/* <SubCourse /> */}
         <DemoTeach />
         <AboutTeacher />
         <ReviewTeacher />

@@ -9,6 +9,7 @@ import { BiTimeFive } from "react-icons/bi";
 import { addCourse } from "../api/chemupApi";
 import ButtonGhostXs from "../components/ButtonGhostXs";
 import MockDataCourseCard from "../components/mockDataCourseCard";
+import pic from "../assets/ChemUplogoC.png";
 
 export default function Adminpage() {
   const [input, setInput] = useState({
@@ -142,11 +143,7 @@ export default function Adminpage() {
               <div className="h-auto w-[280px] flex flex-col justify-between  rounded-3xl shadow-lg hover:scale-105 active:scale-100 transition duration-200 carousel-item">
                 <div className=" h-[80px] rounded-t-3xl bg-[url('/src/assets/cardbg.jpg')] bg-cover relative">
                   <div className=" flex justify-center w-full absolute top-[18px] right-0 left-0 bottom-0 ">
-                    <img
-                      src="src/assets/ChemUplogoC.png"
-                      alt="Clogo"
-                      className="h-32 "
-                    />
+                    <img src={pic} alt="Clogo" className="h-32 " />
                   </div>
                 </div>
                 <div className=" bg-[#038ECE] h-[270px] pt-20 text-center px-5">
@@ -158,11 +155,11 @@ export default function Adminpage() {
                     {input.description || "รายละเอียดคอร์ส"}
                   </p>
                   <ul className=" text-left text-sm text-C-white pt-3">
-                    {/* {lesson.map((el) => (
-                      <li>{el.value}</li>
-                    ))} */}
+                    {lesson.map((el) => (
+                      <li>{el.lessonName}</li>
+                    ))}
                     {/* <li>{lesson.map}</li> */}
-                    <li>lesson list</li>
+                    {/* <li>lesson list</li> */}
                   </ul>
                 </div>
                 <div className=" bg-C-gray3 h-[35px] rounded-b-3xl flex justify-between items-center px-5 text-sm">

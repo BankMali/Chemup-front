@@ -968,21 +968,22 @@ export default function MockDataCourseCard() {
               )}
             </div>
           </div>
-          <Link to={`/coursedetail/${el.id}`}>
-            {/* <a href="/coursedetail/:id"> */}
-            <CourseCard
-              key={index}
-              courseName={el.name}
-              courseDescription={el.description}
-              courseTimeMax={el.timeMax}
-              coursePrice={el.price}
-              lesson={el.Lessons.map((el) => (
-                <li>{el.lessonName}</li>
-              ))}
-              onClickRemove={() => hdlRemove(index)}
-            />
-            {/* </a> */}
-          </Link>
+
+          {/* <a href="/coursedetail/:id"> */}
+          <CourseCard
+            key={index}
+            id={el.id}
+            courseName={el.name}
+            courseDescription={el.description}
+            courseTimeMax={el.timeMax}
+            coursePrice={el.price.toLocaleString()}
+            lesson={el.Lessons.map((el) => (
+              <li>{el.lessonName}</li>
+            ))}
+            onClickRemove={() => hdlRemove(index)}
+          />
+          {/* </a> */}
+
           {/* {<button onClick={() => hdlRemove(index)}>Remove</button>}
           <Link className="btn btn-circle" toi={`/editcourse/${el.id}`}>
             Edit

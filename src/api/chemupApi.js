@@ -52,8 +52,20 @@ export const getLessonById = (id) => {
 export const updateCourse = (id, input) => {
   return chemupApi.put(`/course/${id}`, input);
 };
+
 export const updateLesson = (id, input) => {
   return chemupApi.put(`/lesson/${id}`, input);
+};
+
+//// order
+export const getAllOrder = () => {
+  return chemupApi.get(`/order/`);
+};
+export const getOrderById = (id) => {
+  return chemupApi.get(`/order/${id}`);
+};
+export const deleteOrder = (id) => {
+  return chemupApi.delete(`/order/${id}`);
 };
 
 // export const deleteCourse = (token) => {

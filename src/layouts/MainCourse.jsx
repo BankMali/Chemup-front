@@ -845,7 +845,7 @@ export default function MainCourse() {
   //   ];
 
   return (
-    <div className=" h-fit bg-C-white pt-20">
+    <div className=" h-fit bg-C-white py-20">
       <div className="flex justify-between px-10">
         <h1 className="text-xl text-C-blue2 font-medium">คอร์สเรียนหลัก</h1>
         <a href="/maincourse" className=" hover:text-C-yellow3">
@@ -853,7 +853,8 @@ export default function MainCourse() {
         </a>
       </div>
 
-      <div className="px-10 carousel carousel-center w-full overflow-x-scroll">
+      {/* <div className="px-10 carousel carousel-center w-full overflow-x-scroll"> */}
+      <div className="px-10 carousel flex flex-wrap w-full">
         <MockDataCourseCard />
       </div>
     </div>
