@@ -5,12 +5,13 @@ import { getOrderById } from "../api/chemupApi";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ render, setRender }) {
   const navigate = useNavigate();
   const [order, setOrder] = useState([]);
   const { user, logout } = useAuth();
   const id = user?.id;
-  const length = order.length;
+
+  // const length = order.length;
 
   const hdlLogout = () => {
     logout();
@@ -24,9 +25,10 @@ export default function Navbar() {
   useEffect(() => {
     getOrderById(id).then((rs) => {
       // console.log("what i get", rs.data);
-      setOrder(rs.data);
+      setOrder(rs.data.length);
+      // console.log(rs.data.length);
     });
-  }, []);
+  }, [render]);
 
   return (
     <div className="sticky top-0 z-40">
@@ -88,14 +90,14 @@ export default function Navbar() {
                     </svg>
 
                     <span className="badge badge-sm indicator-item bg-red-600 border-none text-white">
-                      {length}
+                      {order}
                     </span>
                   </div>
                 </label>
                 <div
                   tabIndex={0}
                   className="mt-3 rounded-xl backdrop-blur-sm dropdown-content w-fit shadow top-[2rem]">
-                  <Cart />
+                  <Cart render={render} setRender={setRender} />
                   {/* <div className="card-body">
                 <span className="font-bold text-lg">8 Items</span>
                 <span className="text-info">Subtotal: $999</span>

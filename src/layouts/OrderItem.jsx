@@ -1,8 +1,17 @@
 import { useState } from "react";
 import { ImBin2 } from "react-icons/im";
+import { deleteOrder } from "../api/chemupApi";
 
-export default function OrderItem({ courseName, hdlRemove, price, id }) {
-  const [count, setCount] = useState(1);
+export default function OrderItem({
+  courseName,
+  // hdlRemove,
+  price,
+  id,
+  quantity,
+  render,
+  setRender,
+}) {
+  const [count, setCount] = useState(quantity || 1);
   // const [price, setPrice] = useState(courseName);
 
   const hdlClickIncrese = (e) => {
@@ -14,9 +23,13 @@ export default function OrderItem({ courseName, hdlRemove, price, id }) {
     }
   };
 
-  const hdlClickRemove = (e) => {};
+  const hdlClickRemove = (e) => {
+    e.preventDefault();
+    deleteOrder(id);
+    setRender(!render);
+  };
 
-  const totalPrice = price * count;
+  // const quantity = count;
 
   return (
     <div
@@ -33,24 +46,24 @@ export default function OrderItem({ courseName, hdlRemove, price, id }) {
           </p>
         </div>
       </div>
-      <div className=" flex-[1.5] flex justify-between items-center">
+      <div className=" flex-[1] flex justify-end items-center gap-5">
         <div className="flex">
-          <button
+          {/* <button
             onClick={hdlClickDecrese}
             className="hover:bg-gray-100 cursor-pointer w-8 h-8 flex justify-center items-center text-C-gray3 border border-C-gray1 rounded-full transition-color duration-50">
             -
-          </button>
+          </button> */}
           <div className="mx-1 w-8 h-8 text-lg flex justify-center items-center text-C-gray3">
-            {count}
+            x {count}
           </div>
-          <button
+          {/* <button
             onClick={hdlClickIncrese}
             className="hover:bg-gray-100 cursor-pointer w-8 h-8 flex justify-center items-center text-C-gray3 border border-C-gray1 rounded-full transition-color duration-50">
             +
-          </button>
+          </button> */}
         </div>
         <ImBin2
-          onClick={hdlRemove}
+          onClick={hdlClickRemove}
           className=" text-C-gray3 hover:scale-110 hover:text-red-700 transition duration-150 active:scale-90 cursor-pointer"
         />
       </div>

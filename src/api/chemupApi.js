@@ -27,7 +27,7 @@ export const getMe = (token) => {
 export const getAllCourse = () => {
   return chemupApi.get("/course/");
 };
-export const deleteCourse = (id) => {
+export const ourse = (id) => {
   return chemupApi.delete(`/course/${id}`);
 };
 
@@ -64,13 +64,18 @@ export const getAllOrder = () => {
 export const getOrderById = (id) => {
   return chemupApi.get(`/order/${id}`);
 };
+
+export const addOrder = (input) => {
+  return chemupApi.post("/order/addorder", input);
+};
+
 export const deleteOrder = (id) => {
   return chemupApi.delete(`/order/${id}`);
 };
 
-// export const deleteCourse = (token) => {
-//     return chemupApi.get('/course/deleteCourse', addToken(token))
-// }
+export const deleteCourse = (token) => {
+  return chemupApi.get("/course/deleteCourse", addToken(token));
+};
 // export const getAllCourse = (token) => {
 //     return chemupApi.get('/course/getAllCourse', addToken(token))
 // }

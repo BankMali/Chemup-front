@@ -29,33 +29,27 @@ export default function Router() {
     {
       path: "/",
       element: <Homepage />,
-      // children: [],
     },
     {
       path: "/allcourse",
       element: <AllCoursespage />,
-      // children: [],
     },
     {
       path: "/maincourse",
       element: <MainCoursepage />,
-      // children: [],
     },
     {
       path: "/subcourse",
       element: <SubCoursepage />,
-      // children: [],
     },
     {
       path: "/demoteach",
       element: <DemoTeachpage />,
-      // children: [],
     },
     {
       path: "/login",
       //   element: <Loginpage />,
       element: user ? <Navigate to="/" /> : <Loginpage />,
-      // children: [],
     },
     {
       path: "/changepassword",

@@ -7,15 +7,18 @@ import ReviewTeacher from "../layouts/ReviewTeacher";
 import SubCourse from "../layouts/SubCourse";
 import Subbar from "../layouts/Subbar";
 import DemoTeach from "../layouts/DemoTeach";
+import { useState } from "react";
 
 export default function Homepage() {
+  const [render, setRender] = useState(false);
+  console.log("check render", render);
   return (
     <div>
       <div className=" h-fit bg-C-white">
-        <Navbar />
+        <Navbar render={render} setRender={setRender} />
         <HeadContent />
         <Subbar />
-        <MainCourse />
+        <MainCourse setRender={setRender} render={render} />
         {/* <SubCourse /> */}
         <DemoTeach />
         <AboutTeacher />

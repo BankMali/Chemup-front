@@ -1,29 +1,30 @@
 import ButtonYellow from "../components/ButtonYellow";
 import { getOrderById } from "../api/chemupApi";
+import { Link } from "react-router-dom";
 
 import OrderItem from "./OrderItem";
 import { useAuth } from "../contexts/AuthContext";
 
 import { useState, useEffect } from "react";
 
-export default function Cart() {
+export default function Cart({ render, setRender }) {
   const [order, setOrder] = useState([]);
   const { user } = useAuth();
   // console.log("cc", user.id);
-  const id = user.id;
+  const id = user?.id;
 
   useEffect(() => {
     getOrderById(id).then((rs) => {
       // console.log("what i get", rs.data);
       setOrder(rs.data);
     });
-  }, []);
+  }, [render]);
 
   // console.log("sss", order);
   let totalPriceSum = 0;
 
   order.forEach((order) => {
-    const coursePrice = parseFloat(order.Course.price);
+    const coursePrice = parseFloat(order?.Course?.price);
     totalPriceSum += coursePrice;
   });
 
@@ -37,11 +38,15 @@ export default function Cart() {
           {order.map((el, index) => (
             <OrderItem
               key={index}
-              //   // hdlClickDecrese={hdlClickDecrese}
-              //   // hdlClickIncrese={hdlClickIncrese}
+              id={el.id}
+              quantity={el.quantity}
+              // hdlClickDecrese={el.quantity}
+              // hdlClickIncrese={el.quantity}
               price={el?.Course?.price}
               courseName={el?.Course?.name}
-              hdlRemove={() => hdlRemove(index)}
+              render={render}
+              setRender={setRender}
+              // hdlRemove={() => hdlRemove(index)}
             />
           ))}
 
@@ -56,9 +61,9 @@ export default function Cart() {
             ฿ {Number(totalPriceSum).toLocaleString()}
           </p>
         </div>
-        <a href={user ? "/payment" : "/register"}>
+        <Link to={user ? "/payment" : "/register"}>
           <ButtonYellow>ชำระเงิน</ButtonYellow>
-        </a>
+        </Link>
         <div className=" flex gap-2 justify-end w-full"></div>
       </div>
     </div>

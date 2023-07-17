@@ -6,17 +6,40 @@ import Footer from "../layouts/Footer";
 import ButtonYellow from "../components/ButtonYellow";
 import OrderItem from "../layouts/OrderItem";
 import ConfirmOrderItem from "../components/ConfirmOrderItem";
+import { useState, useEffect } from "react";
+import { getOrderById } from "../api/chemupApi";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function Paymentpage() {
+  const [order, setOrder] = useState([]);
+  const { user } = useAuth();
+  const id = user?.id;
+
+  useEffect(() => {
+    getOrderById(id).then((rs) => {
+      // console.log("what i get", rs.data);
+      setOrder(rs.data);
+    });
+  }, []);
+
   return (
-    <div className=" w-full h-screen bg-C-white">
+    <div className=" w-full h-full bg-C-white">
       <Navbar />
       <SubHeader>Payment</SubHeader>
       <div className=" w-full flex justify-center h-full bg-C-white gap-5">
         <div className=" w-[40%] flex-col flex gap-5 text-center h-fit justify-center items-center p-5 bg-C-white rounded-lg my-5 border shadow-lg">
           <p className="text-C-gray3 font-bold">Confirm Order</p>
           {/* <OrderItem /> */}
-          <ConfirmOrderItem />
+          {order.map((el, index) => (
+            <ConfirmOrderItem
+              key={index}
+              id={el.id}
+              courseName={el?.Course?.name}
+              price={el?.Course?.price}
+              count={el.quantity}
+            />
+          ))}
+
           <div className=" flex gap-5 px-5 text-center justify-between w-full">
             <p>รวม</p>
             <p className=" text-C-blue1 text-lg">฿ 10,000</p>

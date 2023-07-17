@@ -1,7 +1,7 @@
 import React from "react";
 import MockDataCourseCard from "../components/mockDataCourseCard";
 
-export default function MainCourse() {
+export default function MainCourse({ render, setRender }) {
   //   const mockData = [
   //     {
   //       courseId: 1,
@@ -855,7 +855,8 @@ export default function MainCourse() {
 
       {/* <div className="px-10 carousel carousel-center w-full overflow-x-scroll"> */}
       <div className="px-10 carousel flex flex-wrap w-full">
-        <MockDataCourseCard />
+        <MockDataCourseCard render={render} setRender={setRender} />
+        {/* <button onClick={() => setRender(!render)}>HH</button> */}
       </div>
     </div>
   );

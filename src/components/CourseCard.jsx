@@ -1,10 +1,13 @@
 import React from "react";
 import ButtonYellow from "./ButtonYellow";
+import { useState } from "react";
+
 import { BiTimeFive } from "react-icons/bi";
 import { useAuth } from "../contexts/AuthContext";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import pic from "../assets/ChemUplogoC.png";
+import { addOrder } from "../api/chemupApi";
 
 export default function CourseCard({
   courseName,
@@ -13,15 +16,33 @@ export default function CourseCard({
   coursePrice,
   lesson,
   key,
-  id,
+  idd,
+  setRender,
+  render,
 }) {
   const { user } = useAuth();
+  // const { id } = useParams();
+  // const courseid = id;
+  const [input, setInput] = useState({
+    quantity: "1",
+    totalPrice: coursePrice,
+    courseId: idd,
+    userId: user?.id,
+  });
+
+  // console.log("whatr", idd);
+  const hdlSubmit = (e) => {
+    // e.preventDefault();
+    addOrder(input);
+    setRender(!render);
+    console.log("check input", input);
+  };
 
   return (
     <div
       key={key}
       className="h-auto w-[280px] flex flex-col items-center gap-5 scale-90">
-      <Link to={`/coursedetail/${id}`}>
+      <Link to={`/coursedetail/${idd}`}>
         <div className="h-auto w-[280px] flex flex-col justify-between  rounded-3xl shadow-lg hover:scale-105 active:scale-100 transition duration-200 carousel-item">
           <div className=" h-[80px] rounded-t-3xl bg-[url('/src/assets/cardbg.jpg')] bg-cover relative">
             <div className=" flex justify-center w-full absolute top-[18px] right-0 left-0 bottom-0 ">
@@ -49,7 +70,7 @@ export default function CourseCard({
           </div>
         </div>
       </Link>
-      <ButtonYellow>เพิ่มลงตะกร้า</ButtonYellow>
+      <ButtonYellow onclick={hdlSubmit}>เพิ่มลงตะกร้า</ButtonYellow>
     </div>
   );
 }

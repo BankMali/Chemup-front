@@ -6,7 +6,7 @@ import { useAuth } from "../contexts/AuthContext";
 
 import CourseCard from "../components/CourseCard";
 
-export default function MockDataCourseCard() {
+export default function MockDataCourseCard({ setRender, render }) {
   // const mockData = [
   //   {
   //     courseId: 1,
@@ -930,7 +930,7 @@ export default function MockDataCourseCard() {
       console.log(rs.data);
       setCourse(rs.data);
     });
-  }, []);
+  }, [render]);
 
   return (
     <>
@@ -972,7 +972,7 @@ export default function MockDataCourseCard() {
           {/* <a href="/coursedetail/:id"> */}
           <CourseCard
             key={index}
-            id={el.id}
+            idd={el.id}
             courseName={el.name}
             courseDescription={el.description}
             courseTimeMax={el.timeMax}
@@ -981,6 +981,8 @@ export default function MockDataCourseCard() {
               <li>{el.lessonName}</li>
             ))}
             onClickRemove={() => hdlRemove(index)}
+            render={render}
+            setRender={setRender}
           />
           {/* </a> */}
 

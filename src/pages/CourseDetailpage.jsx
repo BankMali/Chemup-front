@@ -10,12 +10,17 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { getAllCourse } from "../api/chemupApi";
+import React from "react";
+import ReactPlayer from "react-player";
 
 export default function CourseDetailpage() {
   const [course, setCourse] = useState();
   const { user } = useAuth();
   const { id } = useParams();
-  console.log("check id", id);
+  const [video, setVideo] = useState(
+    "https://www.youtube.com/watch?v=Km71Rr9K-Bw&list=RDqsHvdRA0a6o&index=3&ab_channel=NewJeans"
+  );
+  // console.log("check id", id);
 
   // const courses = course.map((course) => {
   //   const list = [...course];
@@ -32,6 +37,11 @@ export default function CourseDetailpage() {
       setCourse(rs.data);
     });
   }, []);
+
+  // const hdlOnclickVideo = () => {
+  //   const newVideo = video;
+  //   setVideo();
+  // };
 
   console.log("Check course", course?.Lessons);
 
@@ -59,10 +69,12 @@ export default function CourseDetailpage() {
 
                 <CourseCard
                   // key={index}
+
+                  idd={el.id}
                   courseName={el.name}
                   courseDescription={el.description}
                   courseTimeMax={el.timeMax}
-                  coursePrice={el.price}
+                  coursePrice={el.price.toLocaleString()}
                   lesson={el.Lessons.map((el) => (
                     <li>{el.lessonName}</li>
                   ))}
@@ -86,6 +98,7 @@ export default function CourseDetailpage() {
                 <p className=" font-bold">
                   ราคา {Number(el?.price).toLocaleString()} บาท
                 </p>
+
                 <div className="flex gap-3 py-3">
                   <ButtonYellowXs>เพิ่มลงตะกร้า</ButtonYellowXs>
                   {user ? (
@@ -96,6 +109,14 @@ export default function CourseDetailpage() {
 
                   {/* <ButtonBlueXs>เข้าสู่ระบบเพื่อเริ่มเรียน</ButtonBlueXs> */}
                 </div>
+                {user ? (
+                  <ReactPlayer
+                    className="border border-1 rounded-lg bg-C-gray2"
+                    url={`${video}`}
+                  />
+                ) : (
+                  false
+                )}
               </div>
 
               <div className="flex flex-col gap-4">
@@ -135,7 +156,16 @@ export default function CourseDetailpage() {
                   <BoxLeason
                     LessonName={el?.lessonName}
                     subLessonName={el?.SubLessons?.map((el) => (
-                      <li>{el?.name}</li>
+                      <li className="flex justify-between">
+                        <li>{el?.name}</li>
+                        <button
+                          // onClick={hdlOnclickVideo(
+                          //   "https://www.youtube.com/watch?v=HX9vJaXD8WE&list=RDqsHvdRA0a6o&index=5&ab_channel=CokeStudio"
+                          // )}
+                          className="button">
+                          Video
+                        </button>
+                      </li>
                     ))}
                   />
                 ))}
